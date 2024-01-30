@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const routes = ["Home", "About", "Services", "Pricing", "Conatct"];
 
-export default function Nav() {
+export default function Nav({ onClickCart }) {
   const [isMenuShown, setIsMenuShown] = useState(false);
   return (
     <nav className="flex flex-wrap justify-between items-center z-10 relative">
@@ -39,7 +39,10 @@ export default function Nav() {
           })}
         </ul>
       </div>
-      <div className="fixed left-4 bottom-4 lg:static lg:mr-8">
+      <div
+        onClick={onClickCart}
+        className="fixed left-4 bottom-4 lg:static lg:mr-8"
+      >
         <div className="btn-press-animate cursor-pointer  h-12 w-12 flex-center rounded-full bg-white shadow-md">
           <FaShoppingCart />
         </div>
