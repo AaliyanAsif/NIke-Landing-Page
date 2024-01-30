@@ -16,6 +16,7 @@ const fakeCartItem = SHOE_LIST.map((shoe) => {
 });
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [curShoe, setCurShoe] = useState(SHOE_LIST[0]);
 
   useEffect(() => {
     const isDarkMode = localStorage.getItem("isDarkMode");
@@ -35,8 +36,8 @@ function App() {
   return (
     <div className="animate-fadeIn p-10 xl:px-24 dark:bg-night">
       <Nav onClickCart={() => setIsSidebarOpen(true)} />
-      <ShoeDetail />
-      <NewArrivalSection items={SHOE_LIST} />
+      <ShoeDetail shoe={curShoe} />
+      <NewArrivalSection items={SHOE_LIST} onClickCard={setCurShoe} />
       <Sidebar onClose={() => setIsSidebarOpen(false)} isOpen={isSidebarOpen}>
         <Cart cartItems={fakeCartItem} />
       </Sidebar>

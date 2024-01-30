@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 
-export default function Card({ item }) {
+export default function Card({ item, onClick }) {
   return (
     <div
+      onClick={() => onClick(item)}
       className={`${item.className} max-w-xl transform transition hover:scale-105`}
     >
       <div className="p-8">
