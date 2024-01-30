@@ -6,6 +6,9 @@
   .flex-center {
     @apply flex justify-center items-center;
   }
+  .btn-press-animate {
+    @apply transition active:scale-75;
+  }
 }
 
 @layer base {

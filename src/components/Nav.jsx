@@ -40,7 +40,7 @@ export default function Nav() {
         </ul>
       </div>
       <div className="fixed left-4 bottom-4 lg:static lg:mr-8">
-        <div className="cursor-pointer  h-12 w-12 flex-center rounded-full bg-white shadow-md">
+        <div className="btn-press-animate cursor-pointer  h-12 w-12 flex-center rounded-full bg-white shadow-md">
           <FaShoppingCart />
         </div>
       </div>
