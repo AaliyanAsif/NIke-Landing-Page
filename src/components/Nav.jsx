@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { FaShoppingCart } from "react-icons/fa";
 import NikeLogo from "../assets/nike-logo.svg?react";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -10,11 +11,11 @@ export default function Nav({ onClickCart }) {
   return (
     <nav className="flex flex-wrap justify-between items-center z-10 relative">
       <a href="#">
-        <NikeLogo className="h-20 w-20 " />
+        <NikeLogo className="h-20 w-20 dark:fill-white " />
       </a>
       <button
         onClick={() => setIsMenuShown(!isMenuShown)}
-        className="p-2 hover:bg-gray-100 rounded-lg focus:ring-2 focus:ring-gray-200 lg:hidden"
+        className="dark:text-grey-400 dark:hover:bg-gray-700 p-2 hover:bg-gray-100 rounded-lg focus:ring-2 focus:ring-gray-200 lg:hidden"
       >
         <RxHamburgerMenu size={25} />
       </button>
@@ -26,7 +27,7 @@ export default function Nav({ onClickCart }) {
           {routes.map((route, index) => {
             return (
               <li
-                className={`cursor-pointer rounded py-2 px-3 lg:hover:bg-transparent lg:hover:text-blue-500 ${
+                className={`cursor-pointer rounded py-2 px-3 lg:hover:bg-transparent lg:hover:text-blue-500 lg:dark:text-white ${
                   index === 0
                     ? "bg-blue-500 text-white lg:bg-transparent lg:text-blue-500"
                     : "hover:bg-gray-100"

@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NewArrivalSection from "./components/NewArrivalSection";
 import ShoeDetail from "./components/ShoeDetail";
 import Sidebar from "./components/Sidebar";
 import Nav from "./components/nav";
 import { SHOE_LIST } from "./const";
 import Cart from "./components/Cart";
+import { BiSun, BiMoon } from "react-icons/bi";
 
 const fakeCartItem = SHOE_LIST.map((shoe) => {
   return {
@@ -15,14 +16,39 @@ const fakeCartItem = SHOE_LIST.map((shoe) => {
 });
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  useEffect(() => {
+    const isDarkMode = localStorage.getItem("isDarkMode");
+    if (isDarkMode === "true") {
+      window.document.documentElement.classList.add("dark");
+    }
+  }, []);
+
+  function toogleDarkMode() {
+    window.document.documentElement.classList.toggle("dark");
+
+    localStorage.setItem(
+      "isDarkMode",
+      window.document.documentElement.classList.contains("dark")
+    );
+  }
   return (
-    <div className="animate-fadeIn p-10 xl:px-24">
+    <div className="animate-fadeIn p-10 xl:px-24 dark:bg-night">
       <Nav onClickCart={() => setIsSidebarOpen(true)} />
       <ShoeDetail />
       <NewArrivalSection items={SHOE_LIST} />
       <Sidebar onClose={() => setIsSidebarOpen(false)} isOpen={isSidebarOpen}>
         <Cart cartItems={fakeCartItem} />
       </Sidebar>
+      <div className="fixed bottom-4 right-4 ">
+        <button
+          onClick={toogleDarkMode}
+          className="shadow-lg bg-night-50 text-white px-4 py-2 rounded-full dark:bg-white dark:text-night"
+        >
+          <BiSun className="hidden dark:block" />
+          <BiMoon className="dark:hidden" />
+        </button>
+      </div>
     </div>
   );
 }
