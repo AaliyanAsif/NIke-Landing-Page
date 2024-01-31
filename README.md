@@ -2,6 +2,14 @@
 
 Welcome to the Nike Shoes Landing Page, a React.js application showcasing a variety of Nike shoes. This responsive and stylish website is designed to provide users with a seamless experience while exploring and shopping for their favorite Nike footwear.
 
+## Screenshot
+
+![screenshot](/public/ss.png)
+
+## Live site
+
+Here is a live site for the project for you to try out!
+
 ## Features
 
 ### Shoe Selection
