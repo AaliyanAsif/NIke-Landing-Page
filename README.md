@@ -10,6 +10,8 @@ Welcome to the Nike Shoes Landing Page, a React.js application showcasing a vari
 
 Here is a live site for the project for you to try out!
 
+- https://github.com/AaliyanAsif/NIke-Landing-Page
+
 ## Features
 
 ### Shoe Selection
